@@ -38,17 +38,17 @@
             </div>
         </div>
     </div>
+    @* 必须放在RenderBody之前，因为在子页面加载前，这些js文件必须先被加载 *@
+    @* 又必须放在本页面靠后的地方，因为本页面还需要js文件的支持 *@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/layer")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/myjs")
+    @*@RenderSection("scripts", required: false)*@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        @*<footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>*@
     </div>
-
-    @*@Scripts.Render("~/bundles/jquery")*@
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/my")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

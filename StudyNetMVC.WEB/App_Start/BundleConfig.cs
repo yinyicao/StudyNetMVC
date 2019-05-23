@@ -11,6 +11,9 @@ namespace StudyNetMVC.WEB
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/layer").Include(
+                        "~/Content/layer/layer.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -24,12 +27,12 @@ namespace StudyNetMVC.WEB
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/myCss.css"));
+                      "~/Content/site.css"));
 
             //以下是我自己手动配置的
-            bundles.Add(new ScriptBundle("~/bundles/my").Include(
-                        "~/Scripts/jquerysession.js"));
+            bundles.Add(new ScriptBundle("~/bundles/myjs").Include(
+                        "~/Scripts/jquerysession.js",
+                        "~/Scripts/site.js"));
         }
     }
 }

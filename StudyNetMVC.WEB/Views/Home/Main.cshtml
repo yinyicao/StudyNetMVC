@@ -1,17 +1,11 @@
 ﻿@{
     ViewBag.Title = "Main";
 }
-@*bootstrap table组件以及中文包的引用*@
-<script src="~/Scripts/jquery-3.3.1.js"></script>
-<script src="~/Scripts/bootstrap.js"></script>
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
-<script src="~/Content/bs-table/bootstrap-table.js"></script>
-<link href="~/Content/bs-table/bootstrap-table.css" rel="stylesheet" />
+
+@* bootstrap-table需要同时引入js和css否则会出现多个表头的情况 *@
+<link href="~/Content/bs-table/bootstrap-table.min.css" rel="stylesheet" />
+<script src="~/Content/bs-table/bootstrap-table.min.js"></script>
 <script src="~/Content/bs-table/locale/bootstrap-table-zh-CN.js"></script>
-<script src="~/Content/layer/layer.js"></script>
-
-
-
 <div class="panel-body" style="padding-bottom:0px;">
     <div class="panel panel-default">
         <div class="panel-heading">查询条件</div>
