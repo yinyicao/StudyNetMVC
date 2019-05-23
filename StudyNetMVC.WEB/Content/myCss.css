@@ -1,0 +1,4 @@
+﻿.col-md-2 {
+    width: calc((100% - 150px)/6);
+    margin-top:7px;
+}

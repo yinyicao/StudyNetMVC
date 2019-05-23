@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Content/layer/layer.js"></script>
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+        <div class="tabbable">
+            <div style="height:100px"></div>
+            <ul class="nav nav-tabs nav-justified" style="background:beige">
+                <li role="presentation" class="myTabs active"><a href="#tab1">普通登录</a></li>
+                <li role="presentation" class="myTabs"><a href="#tab2">手机号登录</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="panel panel-success">
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2 col-md-offset-1">
+                                            <label for="exampleInputEmail1">邮&nbsp;&nbsp;&nbsp;箱</label>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <input type="email" class="form-control" id="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2 col-md-offset-1">
+                                            <label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <input type="password" class="form-control" id="passForEmail" placeholder="Password">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-2">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> 记住密码
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 col-md-offset-2">
+                                        <button type="button" class="btn btn-info" data-loading-text="登录中..." id="loginByEmail">登录</button>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-1">
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#registerModal" id="register">注册</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <ul>
+                                <li>点击登录进行登录</li>
+                                <li>使用<span style="color:orangered">邮箱</span>登录</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <div class="panel panel-success">
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2 col-md-offset-1">
+                                            <label for="exampleInputEmail1">手机号</label>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <input type="number" class="form-control" id="phone" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2 col-md-offset-1">
+                                            <label for="exampleInputPassword1">密&nbsp;&nbsp;&nbsp;码</label>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <input type="password" class="form-control" id="passForPhone" placeholder="Password">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-2">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> 记住密码
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 col-md-offset-2">
+                                        <button type="button" data-loading-text="登录中..." class="btn btn-info" id="loginByPhone">登录</button>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-1">
+                                        <button type="button" data-toggle="modal" data-target="#registerModal" class="btn btn-info">注册</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <ul>
+                                <li>点击登录进行登录</li>
+                                <li>使用<span style="color:orangered">手机号</span>登录</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">注册</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="exampleInputEmail1">邮&nbsp;&nbsp;&nbsp;箱</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" id="emailForReg" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="exampleInputEmail1">手机号</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control" id="phoneForReg" placeholder="Phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" id="passForReg1" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="password">密码确认</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" id="passForReg2" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn_register">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/login.js"></script>

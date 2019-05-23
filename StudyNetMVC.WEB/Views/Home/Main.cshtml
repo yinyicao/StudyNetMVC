@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Main";
+}
+@*bootstrap table组件以及中文包的引用*@
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Content/bs-table/bootstrap-table.js"></script>
+<link href="~/Content/bs-table/bootstrap-table.css" rel="stylesheet" />
+<script src="~/Content/bs-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="~/Content/layer/layer.js"></script>
+
+
+
+<div class="panel-body" style="padding-bottom:0px;">
+    <div class="panel panel-default">
+        <div class="panel-heading">查询条件</div>
+        <div class="panel-body">
+            <form id="formSearch" class="form-horizontal">
+                <div class="form-group" style="margin-top:15px">
+                    <label class="control-label col-sm-1" for="txt_search_username">用户名</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="txt_search_username">
+                    </div>
+                    <label class="control-label col-sm-1" for="txt_search_phone">电话</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="txt_search_phone">
+                    </div>
+                    <div class="col-sm-4" style="text-align:left;">
+                        <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toolbar" class="btn-group">
+        <button id="btn_add" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+        </button>
+        <button id="btn_edit" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+        </button>
+        <button id="btn_delete" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+        </button>
+    </div>
+    <table id="tb_users"></table>
+
+    <div class="modal fade" id="addOrModifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addOrModifyModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group" style="display:none">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="exampleInputEmail1">ID</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="userId" placeholder="Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="userNameDiv" style="display:none">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="exampleInputEmail1">用户名</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="userName" placeholder="Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="exampleInputEmail1">邮&nbsp;&nbsp;&nbsp;箱</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" id="emailForReg" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="exampleInputEmail1">手机号</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control" id="phoneForReg" placeholder="Phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" id="passForReg1" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <label for="password">密码确认</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" id="passForReg2" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn_submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Main.js"></script>

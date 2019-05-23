@@ -1,0 +1,12 @@
+C:\MIME\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\bin\Debug\StudyNetMVC.DAL.dll
+C:\MIME\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\bin\Debug\StudyNetMVC.DAL.pdb
+C:\MIME\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.csprojAssemblyReference.cache
+C:\MIME\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.csproj.CoreCompileInputs.cache
+C:\MIME\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.dll
+C:\MIME\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.pdb
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\bin\Debug\StudyNetMVC.DAL.dll
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\bin\Debug\StudyNetMVC.DAL.pdb
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.csprojAssemblyReference.cache
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.csproj.CoreCompileInputs.cache
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.dll
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.DAL\obj\Debug\StudyNetMVC.DAL.pdb

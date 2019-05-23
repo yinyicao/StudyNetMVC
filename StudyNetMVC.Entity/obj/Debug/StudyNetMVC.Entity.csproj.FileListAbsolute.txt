@@ -1,0 +1,6 @@
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.Entity\bin\Debug\StudyNetMVC.Entity.dll
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.Entity\bin\Debug\StudyNetMVC.Entity.pdb
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.Entity\obj\Debug\StudyNetMVC.Entity.csprojAssemblyReference.cache
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.Entity\obj\Debug\StudyNetMVC.Entity.csproj.CoreCompileInputs.cache
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.Entity\obj\Debug\StudyNetMVC.Entity.dll
+C:\MINE\Workplaces\c#\StudyNetMVC\StudyNetMVC.Entity\obj\Debug\StudyNetMVC.Entity.pdb
