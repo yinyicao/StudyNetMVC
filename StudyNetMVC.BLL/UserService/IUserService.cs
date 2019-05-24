@@ -11,10 +11,14 @@ namespace StudyNetMVC.BLL.UserService
     {
         bool createUser(string email,string phone,string password);
 
+        bool createUser(string username,string email, string phone, string password);
+
         List<User> getAllUserInfo(string username,string phone);
 
         int delUseres(string ids);
 
         bool EditUser(string id, string username, string email, string phone, string pass);
+
+        bool checkLogin(string loginName, string pass, string loginType);
     }
 }

@@ -33,6 +33,8 @@ namespace StudyNetMVC.WEB
             bundles.Add(new ScriptBundle("~/bundles/myjs").Include(
                         "~/Scripts/jquerysession.js",
                         "~/Scripts/site.js"));
+            bundles.Add(new ScriptBundle("~/bundles/md5").Include(
+                        "~/Scripts/md5.js"));
         }
     }
 }

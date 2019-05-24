@@ -10,7 +10,6 @@
     }
 })
 
-
 //点击登录按钮（右上）
 $("#plogin").click(function () {
     window.location.href = '/Home/Index';

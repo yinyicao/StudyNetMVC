@@ -1,8 +1,9 @@
-﻿function addUser(emailForReg, phoneForReg, passForReg) {
+﻿function addUser(userName,emailForReg, phoneForReg, passForReg) {
     $.ajax({
         type: "Post", //提交方式 
-        url: "/Home/Register",//路径 
+        url: "/Home/Add",//路径 
         data: {
+            "username": userName,
             "email": emailForReg,
             "phone": phoneForReg,
             "pass": passForReg
@@ -14,7 +15,7 @@
             if (result == "True") {
                 layer.msg('添加成功！');
             } else {
-                layer.msg('添加失败！');
+                layer.msg('添加失败，请尝试修改用户名！');
             }
 
         },
@@ -46,7 +47,7 @@ function editUser(userId,userName,emailForReg, phoneForReg, passForReg) {
             if (result == "True") {
                 layer.msg('编辑成功！');
             } else {
-                layer.msg('编辑失败！');
+                layer.msg('编辑失败，请尝试修改用户名！');
             }
 
         },
@@ -141,8 +142,8 @@ var TableInit = function () {
             queryParams: oTableInit.queryParams,//传递参数（*）
             sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,                       //初始化加载第一页，默认第一页
-            pageSize: 5,                       //每页的记录行数（*）
-            pageList: [5, 10, 15, 20],        //可供选择的每页的行数（*）
+            pageSize: 8,                       //每页的记录行数（*）
+            pageList: [8, 16, 32, 64],        //可供选择的每页的行数（*）
             search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
             strictSearch: true,
             showColumns: true,                  //是否显示所有的列
@@ -265,7 +266,7 @@ var ButtonInit = function () {
                     layer.msg("两次密码不同！");//弹出提示信息
                     return;
                 }
-                addUser(emailForReg, phoneForReg, passForReg1);
+                addUser(userName,emailForReg, phoneForReg, passForReg1);
             } else if (title === "编辑"){
                 vRes = Verify(userName, emailForReg, phoneForReg, passForReg1, passForReg2);
                 if (vRes == false) {

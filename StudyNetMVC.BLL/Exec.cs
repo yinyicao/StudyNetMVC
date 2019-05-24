@@ -66,6 +66,28 @@ namespace StudyNetMVC.BLL
             return res >= 1 ? true : false;
         }
 
+        public static string QueryUserNameByEmail(string email)
+        {
+            string sql = "select username from UserAccountInfo where email = N'" + email + "'";
+            DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnSting(), CommandType.Text, sql);
+            return ds.Tables[0].Rows.Count > 0 ? (string)ds.Tables[0].Rows[0]["username"] : null;
+        }
+
+        public static string QueryUserNameByPhone(string phoneNumber)
+        {
+            string sql = "select username from UserAccountInfo where phoneNumber = N'" + phoneNumber + "'";
+            DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnSting(), CommandType.Text, sql);
+            return ds.Tables[0].Rows.Count > 0 ? (string)ds.Tables[0].Rows[0]["username"] : null;
+        }
+
+
+        public static string QueryUserNameByUserName(string username)
+        {
+            string sql = "select username from UserAccountInfo where username = N'" + username + "'";
+            DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnSting(), CommandType.Text, sql);
+            return ds.Tables[0].Rows.Count > 0 ? (string)ds.Tables[0].Rows[0]["username"] : null;
+        }
+
         /// <summary>
         /// 根据用户名查询数据
         /// </summary>

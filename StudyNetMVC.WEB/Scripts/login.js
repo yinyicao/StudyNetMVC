@@ -92,7 +92,7 @@ function Register(emailForReg, phoneForReg, passForReg) {
                 //$("#tipMsg").text("删除数据成功");
                 //tree.deleteItem("${org.id}", true);
             } else {
-                alert("注册失败！！！");
+                alert("注册失败,请重试！！！");
                 //$("#tipMsg").text("删除数据失败");
             }
 

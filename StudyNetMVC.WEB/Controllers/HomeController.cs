@@ -32,19 +32,7 @@ namespace StudyNetMVC.WEB.Controllers
         [MyActionFilter(IsLogin = true)]
         public bool Login(string username, string pass,string loginType)
         {
-            bool res = false;
-            switch (loginType)
-            {
-                case "email":
-                    res = BLL.Exec.QueryUserAccountInfoByEmailAndPass(username, pass);
-                    break;
-                case "phone":
-                    res =  BLL.Exec.QueryUserAccountInfoByPhoneAndPass(username, pass);
-                    break;
-                default:
-                    res =  false;
-                    break;
-            }
+            bool res = userService.checkLogin(username, pass, loginType);
             if (res)
             {
                 Session["UserName"] = username;
@@ -69,9 +57,27 @@ namespace StudyNetMVC.WEB.Controllers
             return userService.EditUser( id,  username,  email,  phone,  pass);
         }
 
+
+        /// <summary>
+        /// 注册页-不需要过滤
+        /// </summary>
+        /// <returns></returns>
+        [MyActionFilter(IsLogin = true)]
         public bool Register(string email,string phone,string pass)
         {
             return userService.createUser(email,phone,pass);
+        }
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="phone"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        public bool Add(string username,string email, string phone, string pass)
+        {
+            return userService.createUser(username,email, phone, pass);
         }
 
         /// <summary>

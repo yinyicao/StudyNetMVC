@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserService\UserServiceImpl\UserService.cs" />
     <Compile Include="Utils\DataTableHelper.cs" />
+    <Compile Include="Utils\EncryptUtil.cs" />
     <Compile Include="Utils\StringHelper.cs" />
   </ItemGroup>
   <ItemGroup>

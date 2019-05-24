@@ -21,10 +21,65 @@ namespace StudyNetMVC.BLL.UserService.UserServiceImpl
         public bool createUser(string email, string phone, string password)
         {
             //生成一个用户名
-            string username = "User_"+Utils.StringHelper.getRandomString();
+            string username = "User_" + Utils.StringHelper.getRandomString();
+            string md5pass = Utils.EncryptUtil.Md532(password, username);
             string dateTime = DateTime.Now.ToString("g");
+            //username不存在即可添加
+            return Exec.QueryUserNameByUserName(username) == null ?
+                Exec.InsertUserAccount(username, email, phone, md5pass, dateTime) : false;
 
-            return Exec.InsertUserAccount(username, email, phone, password,dateTime);
+
+        }
+
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="phone"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool createUser(string username, string email, string phone, string password)
+        {
+            username = (username == null || "".Equals(username)) ? "User_" + Utils.StringHelper.getRandomString() : username;
+            string md5pass = Utils.EncryptUtil.Md532(password, username);
+            string dateTime = DateTime.Now.ToString("g");
+            //username不存在即可添加
+            return Exec.QueryUserNameByUserName(username) == null ?
+                Exec.InsertUserAccount(username, email, phone, md5pass, dateTime):false;
+        }
+
+        /// <summary>
+        /// 登录验证
+        /// </summary>
+        /// <param name="loginName">登录名，可能是email，也可能是phone</param>
+        /// <param name="pass"></param>
+        /// <param name="loginType"></param>
+        /// <returns></returns>
+        public bool checkLogin(string loginName, string pass, string loginType)
+        {
+            bool res = false;
+            string username;
+            string md5pass;
+            switch (loginType)
+            {
+                case "email":
+                    username = Exec.QueryUserNameByEmail(loginName);//查询用户名，用来当作加密盐值
+                    if (username == null) break;
+                    md5pass = Utils.EncryptUtil.Md532(pass,username);
+                    res = Exec.QueryUserAccountInfoByEmailAndPass(loginName, md5pass);
+                    break;
+                case "phone":
+                    username = Exec.QueryUserNameByEmail(loginName);
+                    if (username == null) break;
+                    md5pass = Utils.EncryptUtil.Md532(pass, username);
+                    res = Exec.QueryUserAccountInfoByPhoneAndPass(loginName, md5pass);
+                    break;
+                default:
+                    res = false;
+                    break;
+            }
+
+            return res;
         }
 
         /// <summary>
@@ -48,9 +103,11 @@ namespace StudyNetMVC.BLL.UserService.UserServiceImpl
         /// <returns></returns>
         public bool EditUser(string id, string username, string email, string phone, string pass)
         {
-           int res =  Exec.EditUser(id, username, email, phone, pass);
-            if (res >= 1) return true;
-            else return false;
+            string md5pass = Utils.EncryptUtil.Md532(pass,username);
+            //username不存在即可添加
+            return Exec.QueryUserNameByUserName(username) == null ?
+             (Exec.EditUser(id, username, email, phone, md5pass)>=1?true:false):false;
+
         }
 
         /// <summary>
