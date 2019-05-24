@@ -28,7 +28,7 @@ function Login(context,username,pass,loginType) {
         success: function (result) {//返回数据根据结果进行相应的处理 
             if (result == "True") {
                 layer.msg("登录成功！");
-                $.session.set('user', '001')
+                $.session.set('user', username)
                 window.location.href = '/Home/Main';
             } else {
                 layer.msg("登录失败！用户名或密码错误！");

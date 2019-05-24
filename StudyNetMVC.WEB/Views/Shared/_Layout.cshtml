@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,9 +25,10 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="plogin"><A href="#">登录</A></li>
-                    <li id="pregister"><A href="#">注册</A></li>
-                    <li class="dropdown" id="personalCenter">
+                    <li id="plogin" style="display:none"><A href="#">登录</A></li>
+                    <li id="pregister" style="display:none"><A href="#">注册</A></li>
+                    <li style="display:none"><A href="#" id="currentUser"></A></li>
+                    <li class="dropdown" id="personalCenter" style="display:none">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">修改密码</a></li>

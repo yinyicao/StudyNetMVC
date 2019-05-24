@@ -63,8 +63,7 @@ namespace StudyNetMVC.BLL
             string sql = "select count(*) as userNumber from UserAccountInfo where email = N'"+email+"' and password = N'"+pass+"'";
             DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnSting(), CommandType.Text, sql);
             int res =  (int)ds.Tables[0].Rows[0]["userNumber"];
-            if (res >= 1) return true;
-            else return false;
+            return res >= 1 ? true : false;
         }
 
         /// <summary>
@@ -91,8 +90,7 @@ namespace StudyNetMVC.BLL
             string sql = "select count(*) as userNumber from UserAccountInfo where phoneNumber = N'" + phone + "' and password = N'" + pass + "'";
             DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnSting(), CommandType.Text, sql);
             int res = (int)ds.Tables[0].Rows[0]["userNumber"];
-            if (res >= 1) return true;
-            else return false;
+            return res >= 1 ? true : false;
         }
 
         /// <summary>
@@ -106,8 +104,7 @@ namespace StudyNetMVC.BLL
         {
             string sql = "insert into UserAccountInfo(username,email,phoneNumber,password,createDate) values(N'"+username+"',N'"+email+"',N'"+phone+"',N'"+pass+"',N'"+createDate+"')";
             int res = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnSting(), CommandType.Text, sql);
-            if (res >= 1) return true;
-            else return false;
+            return res >= 1 ? true : false;
         }
 
     }
