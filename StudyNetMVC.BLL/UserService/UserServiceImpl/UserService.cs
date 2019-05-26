@@ -129,5 +129,18 @@ namespace StudyNetMVC.BLL.UserService.UserServiceImpl
             }
            
         }
+
+        public bool modifyPass(string username, string newPass, string newPass2) {
+
+            //根据登录名（email或phone）查找用户名
+          username =Exec.QueryUserNameByEmail(username);
+          if (username == null) username = Exec.QueryUserNameByPhone(username);
+          if (Exec.QueryUserNameByUserName(username) == null || newPass == null || !newPass.Equals(newPass2)){
+              return false;
+          }else{
+              string md5pass = Utils.EncryptUtil.Md532(newPass, username);
+              return Exec.modifyPass(username, md5pass);
+          }
+        }
     }
 }

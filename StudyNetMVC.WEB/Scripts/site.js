@@ -15,6 +15,11 @@ $("#plogin").click(function () {
     window.location.href = '/Home/Index';
 })
 
+//点击修改密码按钮（右上）
+$("#modifyPass").click(function () {
+    window.location.href = '/Home/ModifyPass';
+})
+
 //点击退出按钮（右上）
 $("#exit").click(function () {
     $.ajax({
@@ -25,9 +30,13 @@ $("#exit").click(function () {
         },
         success: function (result) {//返回数据根据结果进行相应的处理 
             if (result == "True") {
-                layer.msg("退出成功！");
-                $.session.remove('user');
-                window.location.href = '/Home/Index';
+                layer.msg("退出成功！", {
+                    time: 1000
+                }, function () {
+                        $.session.remove('user');
+                        window.location.href = '/Home/Index';
+                }
+                );
             } else {
                 layer.msg("退出失败");
             }

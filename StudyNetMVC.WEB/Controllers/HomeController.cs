@@ -42,6 +42,22 @@ namespace StudyNetMVC.WEB.Controllers
            
         }
 
+        public ActionResult ModifyPass()
+        {
+
+            return View();
+
+        }
+
+        public bool ModifyPassAPI(string newPass, string newPass2)
+        {
+            string username = Session["UserName"].ToString();
+            return userService.modifyPass(username , newPass, newPass2)? Logout():false;
+
+        }
+
+
+
         /// <summary>
         /// 登出方法-可以过滤也可以不过滤
         /// </summary>

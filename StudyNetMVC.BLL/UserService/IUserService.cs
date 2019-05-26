@@ -20,5 +20,7 @@ namespace StudyNetMVC.BLL.UserService
         bool EditUser(string id, string username, string email, string phone, string pass);
 
         bool checkLogin(string loginName, string pass, string loginType);
+
+        bool modifyPass(string username,string newPass, string newPass2);
     }
 }

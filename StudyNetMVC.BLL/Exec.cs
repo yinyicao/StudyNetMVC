@@ -115,6 +115,13 @@ namespace StudyNetMVC.BLL
             return res >= 1 ? true : false;
         }
 
+        public static bool modifyPass(string username, string newPass)
+        {
+            String sql = "update UserAccountInfo set password=N'"+newPass+"' where username=N'"+username+"'";
+            int res = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnSting(), CommandType.Text, sql);
+            return res>=1?true:false;
+        }
+
         /// <summary>
         /// 向用户表插入一条信息
         /// </summary>
